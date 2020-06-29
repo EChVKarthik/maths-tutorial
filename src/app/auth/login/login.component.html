@@ -1,0 +1,17 @@
+<!-- <p>login works!</p> -->
+<div>
+    <h1 *ngIf="service && service.userData | async">Welcome {{ (service.userData | async)?.email }}</h1>
+    <div *ngIf="!(service.userData | async)">
+
+        <label for="email">Email address: </label>
+        <input type="text" [(ngModel)]="email" id ="email"><br><br>
+
+        <label for="pwd">Password: </label>
+        <input type="password" [(ngModel)]="password" id="pwd"><br><br>
+        
+        <button (click)="signUp()">Sign Up</button>&nbsp; &nbsp; &nbsp;
+        <button (click)="signIn()">Login</button>   
+    </div>
+    <button (click)="signOut()"  *ngIf="service.userData | async">Logout</button>
+</div>
+     
