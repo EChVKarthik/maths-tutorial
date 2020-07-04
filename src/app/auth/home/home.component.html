@@ -52,27 +52,30 @@
                             <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+    <form>
+        <h1 style = 'color:white;'*ngIf="service && service.userData | async">Welcome {{ (service.userData | async)?.email }}</h1>
+        <div class="container" *ngIf="!(service.userData | async)">
+            <div>
+                <label style = 'color:white;' for="email"><b>Mail id</b></label>
+                <input type="text" [(ngModel)]="email" id ="email" placeholder="Enter Mail ID" required>
+      
+                <label style = 'color:white;' for="pwd"><b>Password</b></label>
+                <input type="password" [(ngModel)]="password" id="pwd" placeholder="Enter Password" required>
+              
+                <button (click)="signIn()">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        </div>
+    </form>
+    
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <button (click)="signOut()"  *ngIf="service.userData | async">Logout</button>
     </div>
-  </form>
+
 </div></li>
                         </ul>
                     </nav>
