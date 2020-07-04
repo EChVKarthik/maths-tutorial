@@ -8,12 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { LoginComponent } from './auth/login/login.component'
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './auth/home/home.component';
+import { AboutComponent } from './auth/about/about.component';
+import { GeometryComponent } from './auth/geometry/geometry.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    AboutComponent,
+    GeometryComponent
   ],
   imports: [
     BrowserModule,
