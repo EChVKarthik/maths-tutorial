@@ -22,7 +22,7 @@
     <header class="header-section">
         <div class="container-fluid">
             <div class="logo">
-                <a href="./app.home.html">
+                <a routerLink="/">
                     <img src="/assets/images/logo.png" alt="">
                 </a>
             </div>
@@ -31,8 +31,8 @@
                 <div class="nav-menu">
                     <nav class="mainmenu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./home.html">Home</a></li>
-                            <li><a href="./about-us.html">About us</a></li>
+                            <li class="active"><a routerLink="/">Home</a></li>
+                            <li><a routerLink="/about_us">About us</a></li>
                             <li><a href="./Geometry.html">Level Wise</a>
                                 <ul class="dropdown">
                                     <li><a href="#">Elementary School</a></li>
@@ -45,7 +45,7 @@
                                     <li><a href="#"> Algebra</a></li>
                                     <li><a href="./about-us.html"> Calculus</a></li>
                                     <li><a href="./Geometry.html">Trigonometry</a></li>
-                                    <li><a href="./Geometry.html">Geometry</a></li>
+                                    <li><a routerLink="/geometry">Geometry</a></li>
                                 </ul>
                             </li>
                             <li><a href="./gallery.html">Videos</a></li>
@@ -118,7 +118,7 @@
                 <div class="col-md-4">
                     <div class="feature-item set-bg" style="background-image: url('/assets/images/feature/feature-2.jpg')">
                         <h3>High School </h3>
-                        <a href="#" class="primary-btn f-btn">Read More</a>
+                        <a href="high" class="primary-btn f-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -206,7 +206,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid" id = "high">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="classes-item set-bg" style="background-image: url('/assets/images/classes/class-1.jpg')">
@@ -223,7 +223,7 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="classes-item set-bg" style="background-image: url('/assets/images/classes/class-3.jpg')">
                         <h4 style="color: #080808">Geometry</h4>
-                        <a href="#" class="primary-btn class-btn">Read More</a>
+                        <a routerLink="/geometry"class="primary-btn class-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
